@@ -93,7 +93,7 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
     return Container(
       padding: const EdgeInsets.only(top: 6, bottom: 6, left: 16, right: 16),
       decoration: BoxDecoration(
-          color: isPined ? theme.weakBackgroundColor : Colors.white,
+          color: isPined ? theme.weakBackgroundColor : Colors.transparent,
           border: Border(
               bottom: BorderSide(
                   color: theme.weakDividerColor ?? CommonColor.weakDividerColor,
