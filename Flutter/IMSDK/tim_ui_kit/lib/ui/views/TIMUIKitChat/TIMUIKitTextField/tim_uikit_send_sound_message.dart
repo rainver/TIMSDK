@@ -283,15 +283,15 @@ class _SendSoundMessageState extends TIMUIKitState<SendSoundMessage> {
       onLongPressCancel: onLonePressCancel,
       child: Container(
         height: 35,
-        color: isRecording ? theme.weakBackgroundColor : Colors.white,
+        color: isRecording ? Colors.white24 : Colors.white12,
         alignment: Alignment.center,
         child: Text(
           TIM_t("按住说话"),
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
-            color: theme.darkTextColor,
+            color: Colors.white,//theme.darkTextColor,
           ),
         ),
       ),

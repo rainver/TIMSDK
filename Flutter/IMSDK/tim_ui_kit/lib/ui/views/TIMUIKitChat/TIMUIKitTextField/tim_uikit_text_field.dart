@@ -667,7 +667,7 @@ class _InputTextFieldState extends TIMUIKitState<TIMUIKitInputTextField> {
             children: [
               _buildRepliedMessage(value),
               Container(
-                color: widget.backgroundColor ?? hexToColor("EBF0F6"),
+                color: const Color(0xFF040B18),//widget.backgroundColor ?? hexToColor("EBF0F6"),
                 child: SafeArea(
                   child: Column(
                     children: [
@@ -748,6 +748,8 @@ class _InputTextFieldState extends TIMUIKitState<TIMUIKitInputTextField> {
                                             showMore = false;
                                           });
                                         },
+                                        cursorColor: Colors.white,
+                                        style: const TextStyle(color: Colors.white),
                                         keyboardType: TextInputType.text,
                                         textInputAction: TextInputAction.send,
                                         onEditingComplete: onSubmitted,
@@ -759,7 +761,7 @@ class _InputTextFieldState extends TIMUIKitState<TIMUIKitInputTextField> {
                                               // fontSize: 10,
                                               color: Color(0xffAEA4A3),
                                             ),
-                                            fillColor: Colors.white,
+                                            fillColor: Colors.white12,
                                             filled: true,
                                             isDense: true,
                                             hintText: widget.hintText ?? ''),

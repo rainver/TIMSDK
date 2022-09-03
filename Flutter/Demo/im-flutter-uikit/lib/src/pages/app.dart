@@ -175,7 +175,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             }
         }
       },
-      sdkAppID: IMDemoConfig.sdkappid,
+      sdkAppID: 40000072,//IMDemoConfig.sdkappid,
       loglevel: LogLevelEnum.V2TIM_LOG_DEBUG,
       listener: V2TimSDKListener(
         onConnectFailed: (code, error) {},

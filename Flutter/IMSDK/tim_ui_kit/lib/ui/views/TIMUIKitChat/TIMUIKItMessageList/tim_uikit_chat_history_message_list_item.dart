@@ -852,7 +852,7 @@ class _TIMUIKItHistoryMessageListItemState
                                 height: 40,
                                 child: Avatar(
                                     borderRadius:
-                                        widget.themeData?.avatarBorderRadius,
+                                        BorderRadius.circular(40),
                                     faceUrl: message.faceUrl ?? "",
                                     showName:
                                         MessageUtils.getDisplayName(message),),
@@ -992,8 +992,7 @@ class _TIMUIKItHistoryMessageListItemState
                             width: 40,
                             height: 40,
                             child: Avatar(
-                                borderRadius:
-                                    widget.themeData?.avatarBorderRadius,
+                                borderRadius: BorderRadius.circular(40),
                                 faceUrl: message.faceUrl ?? "",
                                 showName: MessageUtils.getDisplayName(message)),
                           ),

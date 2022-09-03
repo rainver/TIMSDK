@@ -179,9 +179,11 @@ class _TIMUIKitSoundElemState extends TIMUIKitState<TIMUIKitSoundElem> {
       child: Container(
         padding: widget.textPadding ?? const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: isShowJumpState
-              ? const Color.fromRGBO(245, 166, 35, 1)
-              : (widget.backgroundColor ?? backgroundColor),
+          // color: isShowJumpState
+          //     ? const Color.fromRGBO(245, 166, 35, 1)
+          //     : (widget.backgroundColor ?? backgroundColor),
+          color: widget.isFromSelf ? null : Colors.white12,
+          gradient: widget.isFromSelf ? const LinearGradient(colors: [Color(0xFF841FC3),Color(0xFFFC3C02)]):null,
           borderRadius: widget.borderRadius ?? borderRadius,
         ),
         constraints: const BoxConstraints(maxWidth: 240),
@@ -194,7 +196,7 @@ class _TIMUIKitSoundElemState extends TIMUIKitState<TIMUIKitSoundElem> {
                 Container(width: _getSoundLen()),
                 Text(
                   "''${widget.soundElem.duration} ",
-                  style: widget.fontStyle,
+                  style: const TextStyle(color: Colors.white),//widget.fontStyle,
                 ),
                 isPlaying
                     ? Image.asset(
@@ -226,7 +228,7 @@ class _TIMUIKitSoundElemState extends TIMUIKitState<TIMUIKitSoundElem> {
                 ),
                 Text(
                   " ${widget.soundElem.duration}''",
-                  style: widget.fontStyle,
+                  style: const TextStyle(color: Colors.white),//widget.fontStyle,
                 ),
                 Container(width: _getSoundLen()),
               ],

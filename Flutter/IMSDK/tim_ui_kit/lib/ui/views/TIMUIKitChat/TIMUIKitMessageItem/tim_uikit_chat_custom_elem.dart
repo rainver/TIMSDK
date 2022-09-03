@@ -51,7 +51,9 @@ class TIMUIKitCustomElem extends TIMUIKitStatelessWidget {
     try {
       if (customElem?.data != null) {
         final customMessage = jsonDecode(customElem!.data!);
-        return CallingMessage.fromJSON(customMessage);
+        if (customMessage.containsKey('businessID') && customMessage['businessID'] == 1) {
+          return CallingMessage.fromJSON(customMessage);
+        }
       }
       return null;
     } catch (err) {
@@ -63,7 +65,9 @@ class TIMUIKitCustomElem extends TIMUIKitStatelessWidget {
     try {
       if (customElem?.data != null) {
         final customMessage = jsonDecode(customElem!.data!);
-        return LinkMessage.fromJSON(customMessage);
+        if (customMessage.containsKey('businessID') && customMessage['businessID'] == "text_link") {
+          return LinkMessage.fromJSON(customMessage);
+        }
       }
       return null;
     } catch (err) {

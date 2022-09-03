@@ -80,6 +80,12 @@ class TIMUIKitLastMsg extends TIMUIKitStatelessWidget {
     }else if(linkMessage != null && linkMessage.text != null){
       customLastMsgShow = linkMessage.text!;
     }
+    if(customElem != null && customElem.data != null) {
+      var customMessage = jsonDecode(customElem.data!);
+      if (customMessage.containsKey('businessID') && customMessage['businessID'] == "play_order") {
+        customLastMsgShow = "[PlayOrder]";
+      }
+    }
     return customLastMsgShow;
   }
 

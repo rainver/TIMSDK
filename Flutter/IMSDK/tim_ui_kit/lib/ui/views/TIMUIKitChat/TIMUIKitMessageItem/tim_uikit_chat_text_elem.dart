@@ -164,15 +164,16 @@ class _TIMUIKitTextElemState extends TIMUIKitState<TIMUIKitTextElem> {
       });
     }
     final defaultStyle = widget.isFromSelf
-        ? theme.lightPrimaryMaterialColor.shade50
-        : theme.weakBackgroundColor;
+        ? Colors.transparent//theme.lightPrimaryMaterialColor.shade50
+        : Colors.blueGrey;//theme.weakBackgroundColor;
     final backgroundColor = isShowJumpState
         ? const Color.fromRGBO(245, 166, 35, 1)
         : (widget.backgroundColor ?? defaultStyle);
     return Container(
       padding: widget.textPadding ?? const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: widget.isFromSelf ? null : Colors.white12,
+        gradient: widget.isFromSelf ? const LinearGradient(colors: [Color(0xFF841FC3),Color(0xFFFC3C02)]):null,
         borderRadius: widget.borderRadius ?? borderRadius,
       ),
       constraints:
@@ -184,10 +185,10 @@ class _TIMUIKitTextElemState extends TIMUIKitState<TIMUIKitTextElem> {
           // You can render the widget from extension directly, with a [TextStyle] optionally.
           widget.chatModel.chatConfig.urlPreviewType != UrlPreviewType.none
               ? textWithLink!(
-                  style: widget.fontStyle ?? const TextStyle(fontSize: 16))
+                  style: widget.fontStyle ?? const TextStyle(fontSize: 16, color: Colors.white))
               : Text(widget.message.textElem?.text ?? "",
                   softWrap: true,
-                  style: widget.fontStyle ?? const TextStyle(fontSize: 16)),
+                  style: widget.fontStyle ?? const TextStyle(fontSize: 16, color: Colors.white)),
           // If the link preview info is available, render the preview card.
           if (_renderPreviewWidget() != null &&
               widget.chatModel.chatConfig.urlPreviewType ==

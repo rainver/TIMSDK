@@ -261,7 +261,9 @@ class _TIMUIKitReplyElemState extends TIMUIKitState<TIMUIKitReplyElem> {
     return Container(
       padding: widget.textPadding ?? const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: backgroundColor,
+        //color: backgroundColor,
+        color: isFromSelf ? null : Colors.white12,
+        gradient: isFromSelf ? const LinearGradient(colors: [Color(0xFF841FC3),Color(0xFFFC3C02)]):null,
         borderRadius: widget.borderRadius ?? borderRadius,
       ),
       constraints:
@@ -305,7 +307,7 @@ class _TIMUIKitReplyElemState extends TIMUIKitState<TIMUIKitReplyElem> {
                     UrlPreviewType.none)
               Text(widget.message.textElem?.text ?? "",
                   softWrap: true,
-                  style: widget.fontStyle ?? const TextStyle(fontSize: 16)),
+                  style: widget.fontStyle ?? const TextStyle(fontSize: 16, color: Colors.white)),
             if (widget.chatModel?.chatConfig.urlPreviewType != null &&
                 widget.chatModel?.chatConfig.urlPreviewType ==
                     UrlPreviewType.onlyHyperlink)

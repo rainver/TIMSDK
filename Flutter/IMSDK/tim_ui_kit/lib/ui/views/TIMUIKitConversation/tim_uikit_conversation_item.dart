@@ -91,7 +91,8 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
     final TUITheme theme = value.theme;
     return Container(
-      padding: const EdgeInsets.only(top: 6, bottom: 6, left: 16, right: 16),
+      padding: const EdgeInsets.only(top: 6, bottom: 6, left: 10, right: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
           color: isPined ? theme.weakBackgroundColor : Colors.transparent,
           border: Border(
@@ -114,8 +115,9 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
                       onlineStatus: onlineStatus,
                       faceUrl: faceUrl,
                       showName: nickName,
-                      type: convType
-                      ),
+                      type: convType,
+                      borderRadius: BorderRadius.circular(44),
+                  ),
                   if (unreadCount != 0)
                     Positioned(
                       top: isDisturb ? -2.5 : -4.5,
@@ -151,7 +153,7 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
                       maxLines: 1,
                       style: const TextStyle(
                           height: 1,
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.w400),
                     )),

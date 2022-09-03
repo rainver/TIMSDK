@@ -235,7 +235,8 @@ class _TIMUIKitConversationState extends TIMUIKitState<TIMUIKitConversation> {
 
           return SlidableAutoCloseBehavior(
             child: EasyRefresh(
-              header: CustomizeBallPulseHeader(color: theme.primaryColor),
+              //header: CustomizeBallPulseHeader(color: theme.primaryColor),
+              header: MaterialHeader(),
               onRefresh: () async {
                 model.refresh();
               },

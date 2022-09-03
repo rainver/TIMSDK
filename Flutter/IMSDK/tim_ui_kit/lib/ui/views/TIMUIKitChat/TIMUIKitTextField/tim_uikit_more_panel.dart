@@ -94,14 +94,9 @@ class _MorePanelState extends TIMUIKitState<MorePanel> {
             width: 64,
             margin: const EdgeInsets.only(bottom: 4),
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Colors.transparent,
                 borderRadius: BorderRadius.all(Radius.circular(5))),
-            child: SvgPicture.asset(
-              "images/screen.svg",
-              package: 'tim_ui_kit',
-              height: 64,
-              width: 64,
-            ),
+            child: Image.asset("images/ui_shoot.png", package: 'tim_ui_kit', fit: BoxFit.contain, width: 40,),
           )),
       MorePanelItem(
           id: "photo",
@@ -114,14 +109,9 @@ class _MorePanelState extends TIMUIKitState<MorePanel> {
             width: 64,
             margin: const EdgeInsets.only(bottom: 4),
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Colors.transparent,
                 borderRadius: BorderRadius.all(Radius.circular(5))),
-            child: SvgPicture.asset(
-              "images/photo.svg",
-              package: 'tim_ui_kit',
-              height: 64,
-              width: 64,
-            ),
+            child: Image.asset("images/ui_photo.png", package: 'tim_ui_kit', fit: BoxFit.contain, width: 40,),
           )),
       MorePanelItem(
           id: "file",
@@ -134,7 +124,7 @@ class _MorePanelState extends TIMUIKitState<MorePanel> {
             width: 64,
             margin: const EdgeInsets.only(bottom: 4),
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Colors.white12,
                 borderRadius: BorderRadius.all(Radius.circular(5))),
             child: SvgPicture.asset(
               "images/file.svg",
@@ -324,10 +314,10 @@ class _MorePanelState extends TIMUIKitState<MorePanel> {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       height: 248,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         // color: hexToColor("EBF0F6"),
         border: Border(
-          top: BorderSide(width: 1, color: Colors.grey.shade300),
+          top: BorderSide(width: 1, color: Colors.white12),
         ),
       ),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 23),
