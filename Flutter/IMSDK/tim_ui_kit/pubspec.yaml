@@ -1,6 +1,6 @@
 name: tim_ui_kit
 description: TUIKit is a set of UI components implemented based on the IM SDK, which includes functions such as conversation, chat, search, relationship chain, group, and audio and video calls.
-version: 0.1.3
+version: 0.1.4
 homepage: https://cloud.tencent.com/product/im
 repository: https://github.com/TencentCloud/TIMSDK/tree/master/Flutter/IMSDK/tim_ui_kit
 
